@@ -29,6 +29,7 @@ init:
   - echo %APPVEYOR_BUILD_WORKER_IMAGE%
   - set generator="Visual Studio 15 2017%arch%"
   - echo %generator%
+  - git submodule update --init
 
 before_build:
   - cmd: |-
