@@ -1,0 +1,56 @@
+include(CheckCXXCompilerFlag)
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    add_compile_options(-Weverything)
+endif ()
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    if (NT_WARNINGS_ARE_ERRORS)
+        add_compile_options(-Werror)
+    endif ()
+
+    add_compile_options(-pedantic)
+    add_compile_options(-Wall)
+    add_compile_options(-Wextra)
+endif ()
+
+if (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    add_compile_options(-Wno-shadow)
+else ()
+    if (CMAKE_BUILD_TYPE MATCHES "Coverage")
+        message(FATAL_ERROR "You must use gcc for coverage builds.")
+    endif ()
+endif ()
+
+if (MSVC)
+    add_compile_options(/W4)
+    add_compile_options(/Zi)
+
+    if (NT_WARNINGS_ARE_ERRORS)
+        add_compile_options(/WX)
+    endif ()
+
+    add_compile_options(/MP)
+
+    if (CMAKE_BUILD_TYPE MATCHES "Release" OR CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo")
+        add_compile_options(/O2)
+        add_compile_options(/Ob2)
+        add_compile_options(/Oi)
+        add_compile_options(/Ot)
+        add_compile_options(/Oy)
+        add_compile_options(/GF)
+        add_compile_options(/MD)
+        add_compile_options(/GS-)
+        add_compile_options(/Gy)
+    else ()
+        add_compile_options(/Od)
+        add_compile_options(/MDd)
+        add_compile_options(/GS)
+    endif ()
+
+    add_compile_options(/std:c++17)
+
+    if (CMAKE_BUILD_TYPE MATCHES "Debug")
+        add_link_options(/INCREMENTAL)
+    endif ()
+endif ()

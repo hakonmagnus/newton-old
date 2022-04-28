@@ -1,0 +1,14 @@
+// Copyright (c) 2022 Hákon Hjaltalín.
+//
+// This project is licensed under the MIT license. Please see
+// LICENSE or go to https://opensource.org/licenses/MIT for
+// more information.
+
+#pragma once
+
+#define NT_VERSION_MAJOR @CMAKE_PROJECT_VERSION_MAJOR@
+#define NT_VERSION_MINOR @CMAKE_PROJECT_VERSION_MINOR@
+#define NT_VERSION_PATCH @CMAKE_PROJECT_VERSION_PATCH@
+
+#define NT_VERSION "@CMAKE_PROJECT_VERSION_MAJOR@.@CMAKE_PROJECT_VERSION_MINOR@.@CMAKE_PROJECT_VERSION_PATCH@"
+

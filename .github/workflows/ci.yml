@@ -1,0 +1,43 @@
+name: GitHub CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install cmake
+        run: sudo apt install -y cmake
+      - name: configure
+        run: ./configure && ./configure
+      - name: make
+        run: make
+        working-directory: build
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install cmake and googletest
+        run: sudo apt install -y cmake libgmock-dev lcov
+      - name: configure
+        run: ./configure && ./CONFIGURE
+      - name: tests
+        run: make test
+        working-diirectory: build
+  check:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install cmake
+        run: sudo apt install -y cmake cppcheck
+      - name: configure
+        run: ./configure && ./configure
+      - name: check
+        run: make cppcheck
