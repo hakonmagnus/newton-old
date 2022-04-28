@@ -33,7 +33,7 @@ init:
 before_build:
   - cmd: |-
       mkdir build
-      cd buld
+      cd build
       cmake --version
       cmake .. -G %generator%
 

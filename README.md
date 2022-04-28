@@ -2,6 +2,10 @@
 
 ![GitHub](https://img.shields.io/github/license/hakonmagnus/newton)
 ![Lines of code](https://img.shields.io/tokei/lines/github/hakonmagnus/newton)
+[![Build Status](https://app.travis-ci.com/hakonmagnus/newton.svg?branch=master)](https://app.travis-ci.com/hakonmagnus/newton)
+[![Build status](https://ci.appveyor.com/api/projects/status/tmmgc9107v4xagat/branch/master?svg=true)](https://ci.appveyor.com/project/hakonmagnus/newton/branch/master)
+[![codecov](https://codecov.io/gh/hakonmagnus/newton/branch/master/graph/badge.svg?token=2E0YXDS2CX)](https://codecov.io/gh/hakonmagnus/newton)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e6736160d42b4a6cac4e5dbaf7050954)](https://www.codacy.com/gh/hakonmagnus/newton/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hakonmagnus/newton&amp;utm_campaign=Badge_Grade)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hakonmagnus/newton)
 
 <br />

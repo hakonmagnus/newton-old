@@ -26,10 +26,10 @@ jobs:
       - name: install cmake and googletest
         run: sudo apt install -y cmake libgmock-dev lcov
       - name: configure
-        run: ./configure && ./CONFIGURE
+        run: ./configure && ./configure
       - name: tests
         run: make test
-        working-diirectory: build
+        working-directory: build
   check:
     needs: build
     runs-on: ubuntu-latest
