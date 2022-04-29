@@ -28,6 +28,13 @@ include(CompileOptions)
 include(PrintInfo)
 
 # Configuration
+
+if (BUILD_SHARED_LIBS)
+    set(NT_HEADER_SHARED_LIBS "#define NT_SHARED_LIBS")
+else ()
+    set(NT_HEADER_SHARED_LIBS "")
+endif ()
+
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config/config.h.in ${CMAKE_BINARY_DIR}/config/config.h @ONLY)
 
 # Subdirectories
